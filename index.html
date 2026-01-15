@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Gửi đến em 💖</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: black;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #ff4d6d;
+        margin-bottom: 15px;
+        animation: glow 2s infinite alternate;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        white-space: pre-line;
+    }
+
+    img {
+        width: 200px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px #ff4d6d;
+        }
+        to {
+            text-shadow: 0 0 30px #ff99aa;
+        }
+    }
+
+    .fall {
+        position: absolute;
+        top: -50px;
+        font-size: 20px;
+        animation: fall linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes fall {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(110vh);
+            opacity: 0;
+        }
+    }
+
+    .fall-img {
+    position: absolute;
+    top: -80px;
+    width: 60px;
+    opacity: 0.9;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💖 NGỌC ANH 💖</h1>
+
+    <p>
+Em là điều dịu dàng nhất anh từng gặp  
+Là lý do khiến những ngày bình thường trở nên đặc biệt  
+Anh không hứa sẽ hoàn hảo  
+Nhưng anh hứa sẽ luôn chân thành với em 💕
+
+Anh thích em… rất nhiều 🌙
+    </p>
+
+    <!-- 🔽 THAY ẢNH Ở ĐÂY -->
+    <img src="https://img5.thuthuatphanmem.vn/uploads/2021/11/20/anh-cute-nguoi-that-dep-nhat_022606213.jpg" alt="love">
+</div>
+
+<script>
+
+    /* ====== TEXT RƠI ====== */
+    const texts = [
+        "💖 Ngọc Anh 💖",
+        "Em xinh lắm ✨",
+        "Anh thích em 💕",
+        "Nụ cười của em 🌸",
+        "💗",
+        "✨",
+        "🌙"
+    ];
+
+    function createFallingText() {
+        const span = document.createElement("span");
+        span.className = "fall";
+        span.innerHTML = texts[Math.floor(Math.random() * texts.length)];
+        span.style.left = Math.random() * window.innerWidth + "px";
+        span.style.animationDuration = Math.random() * 5 + 4 + "s";
+        span.style.fontSize = Math.random() * 18 + 14 + "px";
+
+        document.body.appendChild(span);
+
+        setTimeout(() => span.remove(), 9000);
+    }
+
+    setInterval(createFallingText, 300);
+
+    /* ====== ẢNH RƠI ====== */
+    const images = [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_aLsMo5httg8Z-V4sIHIdsqLSrXu3oImvQ&s",
+        "https://ihttps://nhadepqueta.com/wp-content/uploads/2025/08/anh-bia-hinh-anh-cute-1-780x450.jpg.imgur.com/Qr6FQnG.jpg",
+        "https://i.imgur.com/Vz8FJpFhttps://no-cdn.shortpixel.ai/client/to_avif,q_lossy,ret_wait/https://shortpixel.com/blog/wp-content/uploads/2023/12/nyan-cat.gif.jpg",
+        "https://i.imguhttps://i.pinimg.com/originals/e8/d5/a2/e8d5a26f2836d993aedf649c9fbfa0eb.gifr.com/Y4ZQZ7G.jpg"
+    ];
+
+    function createFallingImage() {
+        const img = document.createElement("img");
+        img.src = images[Math.floor(Math.random() * images.length)];
+        img.className = "fall-img";
+        img.style.left = Math.random() * window.innerWidth + "px";
+        img.style.animationDuration = Math.random() * 6 + 6 + "s";
+        img.style.width = Math.random() * 40 + 50 + "px";
+
+        document.body.appendChild(img);
+
+        setTimeout(() => img.remove(), 12000);
+    }
+
+    setInterval(createFallingImage, 900);
+</script>
+
+</script>
+
+</body>
+</html>
